@@ -1,0 +1,71 @@
+{
+  "name": "terraform-calculator",
+  "version": "0.0.0",
+  "description": "The Terraform Calculator Project",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nativecode-dev/terraform-calculator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nativecode-dev/terraform-calculator/issues"
+  },
+  "homepage": "https://github.com/nativecode-dev/terraform-calculator#readme",
+  "author": "NativeCode Development",
+  "keywords": [],
+  "main": "index.js",
+  "scripts": {
+    "lerna": "lerna",
+    "task": "cli-tasks",
+    "test": "cli-tasks test"
+  },
+  "nyc": {
+    "all": true,
+    "exclude": [
+      "node_modules",
+      "**/src/**/*.spec.ts"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "include": [
+      "packages/*/src/**/*.ts"
+    ],
+    "instrument": true,
+    "report-dir": ".cache/coverage",
+    "reporter": "text",
+    "sourceMap": true,
+    "temp-directory": ".cache/nyc"
+  },
+  "tasks": {
+    "build": [
+      "[build:lint]",
+      "lerna run bootstrap",
+      "lerna run build"
+    ],
+    "build:lint": [
+      "jsonsort *"
+    ],
+    "test": [
+      "[build]",
+      "nyc mocha --opts mocha.opts"
+    ]
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@nofrills/tasks": "^7.1.12",
+    "@types/mocha": "^5.2.7",
+    "coverage": "^0.4.1",
+    "json-sort-cli": "^1.14.2",
+    "lerna": "^3.16.4",
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1",
+    "source-map-support": "^0.5.13",
+    "ts-node": "^8.3.0",
+    "tslint": "^5.19.0",
+    "tslint-config-standard": "^8.0.1",
+    "tslint-no-unused-expression-chai": "^0.1.4",
+    "typescript": "^3.6.2"
+  }
+}

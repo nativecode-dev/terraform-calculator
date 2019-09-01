@@ -1,0 +1,10 @@
+root = true
+
+[*]
+indent_size = 2
+
+[*.html]
+indent_size = 2
+
+[*.ts]
+indent_size = 2
