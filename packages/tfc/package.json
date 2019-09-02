@@ -1,0 +1,27 @@
+{
+  "name": "@nativecode/tfc",
+  "version": "0.0.0",
+  "description": "Terraform Calculator",
+  "keywords": [
+    "terraform",
+    "calculator"
+  ],
+  "author": "Mike Pham <mike.pham@proplogix.com>",
+  "homepage": "https://github.com/nativecode-dev/terraform-calculator/tree/master/packages/tfc#readme",
+  "license": "MIT",
+  "main": "bin/tfc.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@git.nativecode.net:opensource/terraform-calculator.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  }
+}
