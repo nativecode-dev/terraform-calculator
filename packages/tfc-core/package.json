@@ -8,7 +8,7 @@
     "url": "git@git.nativecode.net:opensource/terraform-calculator.git"
   },
   "homepage": "https://github.com/nativecode-dev/terraform-calculator/tree/master/packages/tfc-core#readme",
-  "author": "Mike Pham <mike.pham@proplogix.com>",
+  "author": "Mike Pham <mike.pham@nativecode.com>",
   "keywords": [
     "terraform",
     "calculator"

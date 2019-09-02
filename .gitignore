@@ -1,11 +1,17 @@
+# Directories
 .cache/
 .terraform/
-
 bin/
 lib/
-terraform.tfstate.d
+terraform.tfstate.d/
 
-tsconfig.tsbuildinfo
+# Files
+*.tsbuildinfo
+*.tfplan
+
+#------------------------------------------------------------------------------
+# Pre-defined
+#------------------------------------------------------------------------------
 
 # Logs
 logs

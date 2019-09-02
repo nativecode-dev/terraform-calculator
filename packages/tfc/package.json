@@ -8,16 +8,16 @@
     "url": "git@git.nativecode.net:opensource/terraform-calculator.git"
   },
   "homepage": "https://github.com/nativecode-dev/terraform-calculator/tree/master/packages/tfc#readme",
-  "author": "Mike Pham <mike.pham@proplogix.com>",
+  "author": "Mike Pham <mike.pham@nativecode.com>",
   "keywords": [
     "terraform",
     "calculator"
   ],
   "bin": {
-    "aws-terraform-calc": "lib/tfc.js",
-    "tfc": "lib/tfc.js"
+    "aws-terraform-calc": "lib/index.js",
+    "tfc": "lib/index.js"
   },
-  "main": "bin/tfc.js",
+  "main": "bin/index.js",
   "files": [
     "lib"
   ],
@@ -32,13 +32,15 @@
   "dependencies": {
     "@nativecode/tfc-core-calculator": "^0.0.0",
     "@nativecode/tfc-core-terraform": "^0.0.0",
-    "@nofrills/env": "^4.0.1"
+    "@nofrills/env": "^4.0.1",
+    "yargs": "^14.0.0"
   },
   "devDependencies": {
     "@types/chai": "^4.2.0",
     "@types/chai-as-promised": "^7.1.2",
     "@types/node": "^12.7.3",
     "@types/sinon": "^7.0.13",
+    "@types/yargs": "^13.0.2",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "sinon": "^7.4.1"

@@ -26,7 +26,11 @@ export class Executor {
   }
 
   async text(command: string, ...args: string[]): Promise<string[]> {
-    const result = await execa(command, args)
+    const options: execa.Options = {
+      cwd: this.cwd,
+    }
+
+    const result = await execa(command, args, options)
 
     if (result.stderr) {
       return this.sanitize(result.stderr)

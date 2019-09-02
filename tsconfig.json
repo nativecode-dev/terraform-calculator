@@ -2,7 +2,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "typeRoots": [
-      "node_modules/@types"
+      "node_modules/@types",
+      "types/to-json-schema"
     ]
   },
   "extends": "./tsconfig.settings"
