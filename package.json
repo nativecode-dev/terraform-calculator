@@ -50,16 +50,20 @@
     "test": [
       "[build]",
       "nyc mocha --opts mocha.opts"
+    ],
+    "upgrade": [
+      "npm-check -u"
     ]
   },
   "dependencies": {},
   "devDependencies": {
-    "@nofrills/tasks": "^7.1.12",
+    "@nofrills/tasks": "^9.0.2",
     "@types/mocha": "^5.2.7",
     "coverage": "^0.4.1",
     "json-sort-cli": "^1.14.2",
     "lerna": "^3.16.4",
     "mocha": "^6.2.0",
+    "npm-check": "^5.9.0",
     "nyc": "^14.1.1",
     "source-map-support": "^0.5.13",
     "ts-node": "^8.3.0",
