@@ -1,4 +1,7 @@
 .cache/
+bin/
+lib/
+
 
 # Logs
 logs

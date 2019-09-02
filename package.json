@@ -16,6 +16,7 @@
   "keywords": [],
   "main": "index.js",
   "scripts": {
+    "commit": "cli-tasks commit",
     "lerna": "lerna",
     "task": "cli-tasks",
     "test": "cli-tasks test"
@@ -47,6 +48,10 @@
     "build:lint": [
       "jsonsort *"
     ],
+    "commit": [
+      "git add -A .",
+      "npx git-cz"
+    ],
     "test": [
       "[build]",
       "nyc mocha --opts mocha.opts"
@@ -60,6 +65,7 @@
     "@nofrills/tasks": "^9.0.2",
     "@types/mocha": "^5.2.7",
     "coverage": "^0.4.1",
+    "cz-conventional-changelog": "^3.0.2",
     "json-sort-cli": "^1.14.2",
     "lerna": "^3.16.4",
     "mocha": "^6.2.0",
@@ -71,5 +77,10 @@
     "tslint-config-standard": "^8.0.1",
     "tslint-no-unused-expression-chai": "^0.1.4",
     "typescript": "^3.6.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
