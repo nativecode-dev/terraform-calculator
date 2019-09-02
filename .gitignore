@@ -2,6 +2,7 @@
 bin/
 lib/
 
+tsconfig.tsbuildinfo
 
 # Logs
 logs
