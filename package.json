@@ -15,7 +15,13 @@
   "author": "NativeCode Development",
   "keywords": [],
   "main": "index.js",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
   "scripts": {
+    "build": "cli-tasks build",
     "commit": "cli-tasks commit",
     "lerna": "lerna",
     "task": "cli-tasks",
@@ -25,7 +31,7 @@
     "all": true,
     "exclude": [
       "node_modules",
-      "**/src/**/*.spec.ts"
+      "packages/*/specs/**/*.spec.ts"
     ],
     "extension": [
       ".ts"
@@ -46,7 +52,9 @@
       "lerna run build"
     ],
     "build:lint": [
-      "jsonsort *"
+      "jsonsort *",
+      "prettier --loglevel silent --write \"packages/*/specs/**/*.ts\"",
+      "prettier --loglevel silent --write \"packages/*/src/**/*.ts\""
     ],
     "commit": [
       "git add -A .",
@@ -71,16 +79,12 @@
     "mocha": "^6.2.0",
     "npm-check": "^5.9.0",
     "nyc": "^14.1.1",
+    "prettier": "^1.18.2",
     "source-map-support": "^0.5.13",
     "ts-node": "^8.3.0",
     "tslint": "^5.19.0",
     "tslint-config-standard": "^8.0.1",
     "tslint-no-unused-expression-chai": "^0.1.4",
     "typescript": "^3.6.2"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
   }
 }
