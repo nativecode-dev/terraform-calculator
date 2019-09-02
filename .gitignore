@@ -1,6 +1,9 @@
 .cache/
+.terraform/
+
 bin/
 lib/
+terraform.tfstate.d
 
 tsconfig.tsbuildinfo
 

@@ -1,28 +1,24 @@
 {
-  "name": "@nativecode/tfc",
-  "version": "0.0.0",
-  "description": "Terraform Calculator",
+  "name": "@nativecode/tfc-core",
+  "version": "1.0.0",
+  "description": "Terraform Calculator Core Library",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git@git.nativecode.net:opensource/terraform-calculator.git"
   },
-  "homepage": "https://github.com/nativecode-dev/terraform-calculator/tree/master/packages/tfc#readme",
+  "homepage": "https://github.com/nativecode-dev/terraform-calculator/tree/master/packages/tfc-core#readme",
   "author": "Mike Pham <mike.pham@proplogix.com>",
   "keywords": [
     "terraform",
     "calculator"
   ],
-  "bin": {
-    "aws-terraform-calc": "lib/tfc.js",
-    "tfc": "lib/tfc.js"
-  },
-  "main": "bin/tfc.js",
+  "main": "lib/index.js",
   "files": [
     "lib"
   ],
   "directories": {
-    "lib": "bin",
+    "lib": "lib",
     "test": "specs"
   },
   "scripts": {
@@ -30,14 +26,13 @@
     "watch": "tsc --project tsconfig.json --watch"
   },
   "dependencies": {
-    "@nativecode/tfc-core-calculator": "^0.0.0",
-    "@nativecode/tfc-core-terraform": "^0.0.0",
-    "@nofrills/env": "^4.0.1"
+    "@nofrills/types": "^5.0.1",
+    "execa": "^2.0.4"
   },
   "devDependencies": {
     "@types/chai": "^4.2.0",
     "@types/chai-as-promised": "^7.1.2",
-    "@types/node": "^12.7.3",
+    "@types/execa": "^2.0.0",
     "@types/sinon": "^7.0.13",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",

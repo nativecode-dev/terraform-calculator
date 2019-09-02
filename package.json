@@ -21,11 +21,21 @@
     }
   },
   "scripts": {
+    "bootstrap": "lerna boostrap",
     "build": "cli-tasks build",
     "commit": "cli-tasks commit",
     "lerna": "lerna",
     "task": "cli-tasks",
-    "test": "cli-tasks test"
+    "test": "cli-tasks test",
+    "watch": "cli-tasks watch"
+  },
+  "nodemonConfig": {
+    "exec": "nyc mocha --opts mocha.opts",
+    "ext": "ts",
+    "watch": [
+      "packages/*/specs/",
+      "packages/*/src/"
+    ]
   },
   "nyc": {
     "all": true,
@@ -46,7 +56,11 @@
     "temp-directory": ".cache/nyc"
   },
   "tasks": {
+    "bootstrap": [
+      "lerna bootstrap"
+    ],
     "build": [
+      "[bootstrap]",
       "[build:lint]",
       "lerna run bootstrap",
       "lerna run build"
@@ -66,17 +80,23 @@
     ],
     "upgrade": [
       "npm-check -u"
+    ],
+    "watch": [
+      "nodemon"
     ]
   },
   "dependencies": {},
   "devDependencies": {
     "@nofrills/tasks": "^9.0.2",
     "@types/mocha": "^5.2.7",
+    "@types/node": "^12.7.3",
     "coverage": "^0.4.1",
+    "cross-env": "^5.2.1",
     "cz-conventional-changelog": "^3.0.2",
     "json-sort-cli": "^1.14.2",
     "lerna": "^3.16.4",
     "mocha": "^6.2.0",
+    "nodemon": "^1.19.1",
     "npm-check": "^5.9.0",
     "nyc": "^14.1.1",
     "prettier": "^1.18.2",
