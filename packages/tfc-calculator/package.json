@@ -29,6 +29,10 @@
   },
   "devDependencies": {
     "@types/aws-sdk": "^2.7.0",
-    "@types/node": "^12.7.3"
+    "@types/chai": "^4.2.0",
+    "@types/chai-as-promised": "^7.1.2",
+    "@types/node": "^12.7.3",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1"
   }
 }
