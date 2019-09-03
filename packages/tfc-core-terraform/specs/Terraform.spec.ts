@@ -1,10 +1,10 @@
 import 'mocha'
 
-import toJsonSchema from 'to-json-schema'
-
 import expect from './expect'
 
 import { fs } from '@nofrills/fs'
+import { validate } from 'jsonschema'
+
 import { TERRAFORM_ROOT } from './dirs'
 import { Terraform } from '../src/Terraform'
 
@@ -25,8 +25,14 @@ describe('when using terraform', () => {
     describe('working with plans', () => {
       it('should show plan json', async () => {
         const json = await sut.show()
-        const schema = toJsonSchema(JSON.parse(json))
-        console.log(schema)
+        const schema = await sut.schema(json)
+        expect(schema.properties).is.not.undefined
+      })
+
+      it('should validate json against schema', async () => {
+        const json = await sut.show()
+        const schema = await sut.schema(json)
+        expect(validate(json, schema).valid).is.true
       })
     })
 

@@ -1,15 +1,14 @@
 {
   "compilerOptions": {
-    "esModuleInterop": true,
     "outDir": "lib",
     "rootDir": "src",
     "typeRoots": [
-      "node_modules/@types",
-      "../../types/to-json-schema"
+      "types"
     ]
   },
   "extends": "../../tsconfig.settings",
   "include": [
-    "src"
+    "src",
+    "types"
   ]
 }

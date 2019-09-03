@@ -1,3 +1,5 @@
+import toJsonSchema from 'to-json-schema'
+
 import { fs } from '@nofrills/fs'
 import { Executor } from '@nativecode/tfc-core'
 
@@ -26,16 +28,24 @@ export class Terraform {
     return this.clean(this.executor.text(this.path, 'plan', `-out=${this.planfile}`), this.planfile)
   }
 
-  async show(): Promise<string> {
-    if (await fs.exists(this.planfile)) {
-      const json = await this.clean(this.executor.text(this.path, 'show', '-json', '-no-color', this.planfile))
-      return json.join()
+  schema(value: any): Promise<any> {
+    return Promise.resolve(toJsonSchema(value))
+  }
+
+  async show(): Promise<any> {
+    if ((await fs.exists(this.planfile)) === false) {
+      await this.plan()
     }
 
-    return JSON.stringify({})
+    const results = await this.clean(this.executor.text(this.path, 'show', '-json', '-no-color', this.planfile))
+    const json = JSON.parse(results.join())
+    return this.schema(json)
   }
 
   workspace(name: string): Promise<string[]> {
+    if (name === 'current') {
+      return this.clean(this.executor.text(this.path, 'workspace', 'show'))
+    }
     return this.clean(this.executor.text(this.path, 'workspace', 'select', name))
   }
 

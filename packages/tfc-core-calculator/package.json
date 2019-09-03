@@ -25,6 +25,7 @@
     "build": "tsc --project tsconfig.json",
     "watch": "tsc --project tsconfig.json --watch"
   },
+  "types": "lib/index.d.ts",
   "dependencies": {
     "@nativecode/tfc-core": "^1.0.0",
     "aws-sdk": "^2.521.0"

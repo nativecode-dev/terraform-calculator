@@ -1,9 +1,14 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
+    "paths": {
+      "to-json-schema": [
+        "packages/tfc-core-terraform/types/to-json-schema"
+      ]
+    },
     "typeRoots": [
       "node_modules/@types",
-      "types/to-json-schema"
+      "packages/*/types"
     ]
   },
   "extends": "./tsconfig.settings"

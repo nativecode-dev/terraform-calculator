@@ -13,7 +13,7 @@
     "terraform",
     "calculator"
   ],
-  "main": "lib/index.js",
+  "main": "lib/index",
   "files": [
     "lib"
   ],
@@ -25,6 +25,7 @@
     "build": "tsc --project tsconfig.json",
     "watch": "tsc --project tsconfig.json --watch"
   },
+  "types": "lib/index.d.ts",
   "dependencies": {
     "@nativecode/tfc-core": "^1.0.0",
     "jsonschema": "^1.2.4"
