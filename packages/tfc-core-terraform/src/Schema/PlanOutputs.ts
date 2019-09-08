@@ -1,3 +1,5 @@
+import { PlanResource } from './PlanResource'
+
 export interface PlanOutputs {
   root_module: {
     resources: PlanResource[]
