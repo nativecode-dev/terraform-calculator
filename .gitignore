@@ -6,6 +6,7 @@ lib/
 terraform.tfstate.d/
 
 # Files
+*.tfstate
 *.tsbuildinfo
 *.tfplan
 
