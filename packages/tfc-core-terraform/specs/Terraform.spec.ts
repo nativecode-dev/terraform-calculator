@@ -16,10 +16,10 @@ describe('when using terraform', () => {
     expect(sut.initialize()).is.eventually.not.empty
   })
 
-  describe('after project initialized', () => {
+  describe('after initialization', () => {
     it('should create plan file', async () => {
       const plan = await sut.plan()
-      expect(fs.exists(plan[0])).to.eventually.be.true
+      expect(fs.exists(plan)).to.eventually.be.true
     })
 
     describe('working with plans', () => {
@@ -32,6 +32,7 @@ describe('when using terraform', () => {
       it('should validate json against schema', async () => {
         const json = await sut.show()
         const schema = await sut.schema(json)
+        console.log(JSON.stringify(json, null, 2))
         expect(validate(json, schema).valid).is.true
       })
     })
