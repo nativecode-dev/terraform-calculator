@@ -3,6 +3,8 @@ import toJsonSchema from 'to-json-schema'
 import { fs } from '@nofrills/fs'
 import { Executor } from '@nativecode/tfc-core'
 
+import { Plan } from './Schema/Plan'
+
 export class Terraform {
   private readonly executor: Executor
 
@@ -69,7 +71,7 @@ export class Terraform {
   /**
    * Shows the currnet plan file as json.
    */
-  async show(): Promise<any> {
+  async show(): Promise<Plan> {
     if ((await fs.exists(this.planfile)) === false) {
       await this.plan()
     }

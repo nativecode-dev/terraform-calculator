@@ -35,6 +35,11 @@ describe('when using terraform', () => {
         console.log(JSON.stringify(json, null, 2))
         expect(validate(json, schema).valid).is.true
       })
+
+      it('should get format version', async () => {
+        const plan = await sut.show()
+        expect(plan.format_version).to.equal('0.1')
+      })
     })
 
     describe('working with workspaces', () => {
